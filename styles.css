@@ -1,110 +1,399 @@
+/* Reset básico */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
+/* Definir a fonte principal */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
 body {
-  font-family: 'Arial', sans-serif;
-  background: linear-gradient(45deg, #FF6F61, #FF9A8B);
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh; /* Usamos min-height para garantir que o body ocupe pelo menos a altura da tela */
-  text-align: center;
-  padding: 20px; /* Adiciona um espaçamento interno para evitar que o conteúdo encoste nas bordas */
+    font-family: 'Roboto', sans-serif; /* Usando a fonte Roboto */
+    line-height: 1.6;
+    background-color: #b9b5b5;
+    color: #f4f805;
 }
 
-#container {
-  padding: 30px;
-  border-radius: 15px;
-  background-color: rgba(255, 255, 255, 0.8);
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  width: 90%;
-  max-width: 700px;
-  margin: 20px auto; /* Adiciona margem para espaçamento */
-  overflow-y: auto; /* Permite rolagem interna se o conteúdo for muito grande */
+/* Centralizar o conteúdo */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-h1 {
-  font-size: 3em;
-  color: #E74C3C;
+/* Estilo do cabeçalho */
+header {
+    background-color: #ffd104;
+    color: #000000;
+    padding: 20px 0;
+    text-align: center;
 }
 
-#contagem {
-  font-size: 4em;
-  margin-top: 20px;
+/* Título do cabeçalho */
+header h1 {
+    margin-bottom: 10px;
+    border-bottom: 2px solid #5e6003; /* Borda inferior para dar destaque */
+    font-size: 2.5rem; /* Tamanho maior para chamar a atenção */
+    border-radius: 50px;
 }
 
-#fogos {
-  font-size: 3em;
-  margin-top: 20px;
-  opacity: 0;
-  transition: opacity 0.5s;
-  animation: fogosAnimation 2s infinite;
+/* Estilo da navegação */
+nav ul {
+    list-style: none;
+    border-radius: 5px;
+    padding-top: 10px; /* Distância entre o título e a navegação */
+    content: "●";
+    color: #000000;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-right: 8px;
+    display: inline-block;
+    
 }
 
-#mensagem_final {
-  font-size: 1.5em;
-  margin-top: 20px;
-  color: #000;
-  opacity: 0;
-  transition: opacity 1s ease-in;
-  background-color: rgba(255, 255, 255, 0.9);
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
 }
 
-.hidden {
-  display: none;
+nav ul li a {
+    color: #000000;
+    border-color: #000000;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.2rem;
+    transition: color 0.3s ease; /* Adicionando transição suave */
 }
 
-p {
-  color: black;
+/* Efeito de hover na navegação */
+nav ul li a:hover {
+    color: #ff5733; /* Cor vibrante ao passar o mouse */
 }
 
-@keyframes fogosAnimation {
-  0% { opacity: 0.5; }
-  50% { opacity: 1; }
-  100% { opacity: 0.5; }
+/* Exemplo de responsividade */
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
 }
 
-#foto {
-  width: 200px;
-  height: auto;
-  border-radius: 10px;
-  margin: 20px auto;
-  display: block;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+#hero {
+    background: url('chaveiro-hero.jpg') no-repeat center center/cover;
+    color: #000000;
+    padding: 100px 0;
+    text-align: center;
 }
 
-#foto.visible {
-  opacity: 1;
+#hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #000000;
 }
 
-/* Ajustes para telas menores (responsividade) */
-@media (max-width: 600px) {
-  h1 {
-    font-size: 2em; /* Reduz o tamanho da fonte do título */
-  }
+#hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #000000;
 
-  #contagem {
-    font-size: 3em; /* Reduz o tamanho da fonte da contagem */
-  }
+}
 
-  #fogos {
-    font-size: 2em; /* Reduz o tamanho da fonte dos fogos */
-  }
+.btn {
+    background-color: #0b0100;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
 
-  #mensagem_final {
-    font-size: 1.2em; /* Reduz o tamanho da fonte da mensagem final */
-  }
+#servicos {
+    padding: 50px 0;
+    background-color: #f7f7f7; /* Fundo mais claro */
+}
 
-  #foto {
-    width: 150px; /* Reduz o tamanho da foto em dispositivos móveis */
-  }
+#servicos h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #000000; /* Borda inferior para dar destaque */
+    padding-bottom: 10px;
+    font-size: 2rem;
+    color: #333;
+}
+
+.servicos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Grid mais flexível */
+    gap: 30px;
+    justify-items: center;
+}
+
+.servico {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.servico:hover {
+    transform: translateY(-5px); /* Efeito de movimento ao passar o mouse */
+}
+
+.servico h3 {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.servico p {
+    font-size: 1rem;
+    color: #666;
+}
+
+
+#sobre {
+    padding: 50px 0;
+    background-color: #a8a8a4;
+}
+
+#sobre h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    border: 2px solid #d9d9cf;
+    border-radius: 10px;
+    color: #0a0a0a;
+}
+
+
+
+form button {
+    background-color: #333;
+    color: #ec1818;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+form button:hover {
+    background-color: #555;
+}
+
+
+
+footer {
+    background-color: #000000;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+}
+
+/* Logo */
+header img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    display: block;
+    margin-left: 5px;
+}
+
+#hero {
+    background: url('imagen/cadeado.jpg') no-repeat center center/cover;
+    color: #fff;
+    padding: 100px 0;
+    text-align: center;
+    background-position: center 30%;  /* Move a imagem para baixo */
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaçamento entre os inputs */
+    align-items: center; /* Centraliza os inputs */
+}
+
+.campo {
+    position: relative;
+    width: 250px; /* Define um tamanho menor para os inputs */
+}
+
+.input-contato {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #ccc; /* Borda inicial */
+    border-radius: 20px; /* Borda arredondada */
+    outline: none;
+    background: transparent;
+    text-align: center; /* Centraliza o texto dentro do input */
+    transition: 0.3s ease-in-out;
+}
+
+/* Efeito de hover e foco */
+.input-contato:hover {
+    border-color: #ff5733; /* Laranja vibrante no hover */
+    box-shadow: 0 0 10px rgba(255, 87, 51, 0.5);
+}
+
+.input-contato:focus {
+    border-color: #007bff; /* Azul ao focar */
+    box-shadow: 0 0 12px rgba(0, 123, 255, 0.5); /* Brilho azul */
+}
+
+/* Efeito extra ao focar */
+.input-contato:focus:hover {
+    border-color: #28a745; /* Verde ao passar o mouse enquanto foca */
+    box-shadow: 0 0 12px rgba(40, 167, 69, 0.5);
+}
+
+label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    top: 50%;
+    transition: 0.3s ease-in-out;
+    color: var(--verde); /* Cor do label */
+    padding: 0 5px;
+    pointer-events: none; /* Evita que o label seja clicável */
+}
+
+/* Efeito de flutuação do label */
+.input-contato:focus ~ label,
+.input-contato:not(:placeholder-shown) ~ label {
+    top: 5px;
+    font-size: 0.8rem;
+   color: var(--verde); /* Cor do label ao focar */
+}
+
+/* Estilo da seção sobre */
+#sobre {
+    background-color: #e2e0da;  /* Cor de fundo vibrante */
+    margin-bottom: black;
+    border-bottom: #000000;
+    color: #151414;
+    padding: 50px 0;
+    text-align: center;
+    font-family: 'Roboto', sans-serif; /* Usando a fonte Roboto */
+}
+
+/* Estilo do título da seção sobre */
+#sobre h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #333;
+}
+
+/* Estilo da lista de itens */
+#sobre ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; /* Permite que a lista quebre em várias linhas */
+    padding: 0;
+}
+
+/* Estilo de cada item da lista */
+#sobre ul li {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 10px 0;
+    text-align: left; /* Alinha o texto à esquerda */
+    display: flex;
+    align-items: center; /* Alinha o ícone e o texto */
+    padding: 10px;
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    background-color: #fff; /* Cor de fundo padrão */
+}
+
+/* Ícone antes do item da lista */
+#sobre ul li:before {
+    content: '✔';
+    margin-right: 10px;
+    color: #28a745; /* Verde vibrante */
+    font-size: 1.5rem;  /* Aumentando o tamanho do ícone */
+}
+
+/* Efeito de hover */
+#sobre ul li:hover {
+    transform: translateY(-5px); /* Efeito de levitação 3D */
+    box-shadow: 0 4px 15px rgba(239, 110, 110, 0.1); /* Sombra para profundidade */
+    background-color: #28a745; /* Cor de fundo no hover */
+    color: #e10000; /* Cor do texto muda para branco no hover */
+}
+
+/* Efeito extra de hover no ícone */
+#sobre ul li:hover:before {
+    color: #fff; /* Muda a cor do ícone para branco no hover */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    #sobre ul {
+        flex-direction: column; /* Alinha os itens da lista verticalmente em telas menores */
+        align-items: flex-start;
+    }
+
+    #sobre ul li {
+        font-size: 1rem; /* Diminui o tamanho da fonte para telas menores */
+    }
+}
+/* carrossel */
+/*rrossel {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background: #ffd104;
+    color: #000;
+    font-size: 1.2rem;
+    text-align: center;
+    border-radius: 20px 0;
+    position: relative;
+}
+.slide {
+    display: none;
+    padding: 15px;
+}
+
+.slide.active {
+    display: block;
+    animation: fade 1s;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* coluna lateral */ 
+.coluna-lateral {
+    position: fixed;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 250px;
+        background: #000;
+        color: #ffd104;
+        padding: 10px;
+        border-radius: 10px;
+        font-size: 1rem;
+
 }
